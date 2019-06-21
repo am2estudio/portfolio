@@ -1,0 +1,167 @@
+/* fontes personalizadas */
+@font-face {
+    src: url(fonts/moolbor.ttf);
+    font-family: MoolBoran;
+}
+
+@font-face {
+	src: url(fonts/Roboto-Regular.ttf);
+	font-family: Roboto;
+}
+
+body{
+	font-family: 'MoolBoran';
+	padding: 0;
+	margin: 0;
+	background-color: #262132;
+}
+
+/* tamanho de fonte padrão modificável pela acessibilidade */
+#content {
+	font-size: 35px;
+}
+
+/* menu fixo */
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #231b30;
+	height: 120px;
+	z-index: +3;
+}
+
+.logo {
+	position: relative;
+	float: left;
+	padding: 20px 15px 0 35px;
+}
+
+.lista {
+	position: relative;
+	float: left;
+	padding-left: 15%;
+	padding-right: 10%;
+}
+
+ul{
+	display: flex;
+	flex-wrap: wrap;
+	background: #231b30;
+	font-size: 40px;
+}
+
+ul li{
+	list-style: none;
+}
+
+ul li a{
+	text-decoration: none;
+	padding: 10px 20px 0 20px;
+	color: #c9d6f9;
+	display: block;
+}
+
+.acessibilidade {
+	position: relative;
+	float: right;
+	padding-top: 50px;
+	padding-right: 30px;
+	font-size: 40px;
+}
+
+.acessibilidade a {
+	text-decoration: none;
+	padding-right: 10px;
+	color: #c9d6f9;
+	z-index: 1;
+}
+
+a:hover {
+	color: #da4c5a;
+}
+
+/* Imagem de fundo, normal e invertida */
+.background{
+	position: absolute;
+	left: 0;
+	top: -25px;
+	width: 100%;
+	z-index: -1;
+}
+
+.backgroundInv{
+	position: absolute;
+	left: 0;
+	top: -25px;
+	width: 100%;
+	-moz-transform: scaleY(-1);
+	-o-transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
+	filter: FlipV;
+	-ms-filter: "FlipV";
+	z-index: -1;
+}
+
+/* Container usado para cada conjunto "Foto + Descrição"*/
+.container {	
+	position: relative;
+	top: 120px;
+	width: 100%;
+	height: 240px;
+}
+
+.perfil {
+	position: absolute;
+	left: 60px;
+	width: 240px;
+	height: 100%;
+	opacity: 1;
+	transition: .5s ease;
+	backface-visibility: hidden;
+	border: solid;
+	border-color: #c9d6f9;
+	border-radius: 180px;
+}
+
+.perfilHover{
+	position: absolute;
+	left: 60px;
+	width: 240px;
+	height: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	backface-visibility: hidden;
+	border: solid;
+	border-color: #da4c5a;
+	border-radius: 180px;
+}
+
+.nome{
+	position: absolute;
+	left: 340px;
+	margin-right: 280px;
+	font-family: 'MoolBoran';
+	font-size: 56px;
+	color: #da4c5a;
+}
+
+.descricao {
+	position: absolute;
+	left: 340px;
+	top: 70px;
+	margin-right: 180px;
+	font-family: 'Roboto';
+	font-size: 34px;
+	color: #c9d6f9;
+}
+
+.container:hover .perfil {
+	opacity: 0;
+}
+
+.container:hover .perfilHover {
+	opacity: 1;
+}

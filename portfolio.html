@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>Início AM-2</title>
+	<link rel="stylesheet" type="text/css" href="portfolio_style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<meta charset="utf-8">
+
+	<!-- JS/JQUERY para fixar o menu de navegação de acordo com o scroll down -->
+	<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(window).scroll(function(){
+			if ($(this).scrollTop()>630){
+				$('.menu').addClass("sticky");
+				$('.box2').addClass("classBox2");
+			} 
+			else
+			{
+				$('.menu').removeClass("sticky");
+				$('.box2').removeClass("classBox2");
+			}
+		})
+	</script>
+
+	<!-- JS/JQUERY para acessibilidade das fontes -->
+	<script src="jquery-1.11.2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#fontPlus').click(function () {
+				modifyFontSize('increase');
+			});
+
+			$('#fontMinus').click(function () {
+				modifyFontSize('decrease');
+			});
+
+			$('#fontDefault').click(function () {
+				modifyFontSize('default');
+			});
+
+			function modifyFontSize(flag)
+			{
+				var element = $('#content');
+				var currentFontSize = parseInt(element.css('font-size'));
+
+				if (flag == 'increase')
+					currentFontSize += 3;
+				else if (flag == 'decrease')
+					currentFontSize -= 3;
+				else
+					currentFontSize = 35;
+
+				element.css('font-size', currentFontSize);
+			}
+		});
+	</script>
+</head>
+<body>
+	<!-- Menu fixo de navegação -->
+	<div class="menu">
+		<a href="inicio.html"><img class="logo" src="imagens/logo.png" alt="Logo do estúdio AM-2. As letras A e M maiúsculas com um meteoro do lado e o número 2 dentro do meteoro." height="80px"></img></a>
+
+		<div class="lista">
+			<ul>
+				<li><a href="index.html">Início</a></li>
+				<li><a href="estudio.html">Estúdio</a></li>
+				<li><a href="time.html">Time</a></li>
+				<li><a href="portfolio.html">Portfólio</a></li>
+				<li><a href="contato.html">Contato</a></li>
+			</ul>
+		</div>
+
+		<!-- Botões de acessibilidade das fontes -->
+		<div class="acessibilidade">
+			<a id="fontMinus" href="#">A-</a>
+			<a id="fontPlus" href="#">A+</a>
+			<a id="fontDefault" href="#">Padrão</a>
+		</div>
+	</div>
+
+	<!-- Div principal -->
+	<div class="background">
+
+		<div class="nav">
+			<a class="a" href="#">ILUSTRAÇÕES</a>
+			<a class="b active" href="#">ANIMAÇÕES 2D</a>
+		</div>
+
+		<div class="content">
+			
+			<div class="illustration">
+				<div class="image">
+					<img src="imagens/1.jpg">
+				</div>
+				<div class="image">
+					<img src="imagens/2.jpg">
+				</div>
+				<div class="image">
+					<img src="imagens/3.jpg">
+				</div>
+				<div class="image">
+					<img src="imagens/4.jpg">
+				</div>
+				<div class="image">
+					<img src="imagens/5.jpg">
+				</div>
+				<div class="image">
+					<img src="imagens/6.jpg">
+				</div>
+				<div class="image">
+					<img src="imagens/7.jpg">
+				</div>
+				<div class="image">
+					<img src="imagens/8.jpg">
+				</div>
+				<div class="image">
+					<img src="imagens/9.jpg">
+				</div>
+			</div>
+
+			<div class="animation">
+				<!-- <div class="image">
+					<video width="" height="" controls>
+						<source src="video/GokuAnim.mkv" type="video/mkv">
+					</video>
+				</div> -->
+				<div class="image">
+					<video width="" height="" autoplay loop>
+						<source src="video/Viviane.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="image">
+					<video width="" height="" autoplay loop>
+						<source src="video/PauloDonald.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$('a').click(function(){
+				var selected = $(this);
+				$('a').removeClass('active');
+				$(selected).addClass('active');
+			});
+
+			var $a = $('.a'),
+			$b = $('.b'),
+			$illustration = $('.illustration'),
+			$animation = $('.animation');
+
+			$a.click(function(){
+				$illustration.fadeIn();
+				$animation.fadeOut();
+			});
+			$b.click(function(){
+				$illustration.fadeOut();
+				$animation.fadeIn();
+			});
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!--
+Quer fazer um orçamento sem compromisso? Fala com a gente! 
+E-mail, telefone e endereço;
+Caixas do formulário;
+Fotos bonitas passando.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Contato AM-2 </title>
+	<link rel="stylesheet" type="text/css" href="contato_style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<meta charset="utf-8">
+
+	<!-- JS/JQUERY para acessibilidade das fontes -->
+	<script src="jquery-1.11.2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#fontPlus').click(function () {
+				modifyFontSize('increase');
+			});
+
+			$('#fontMinus').click(function () {
+				modifyFontSize('decrease');
+			});
+
+			$('#fontDefault').click(function () {
+				modifyFontSize('default');
+			});
+
+			function modifyFontSize(flag)
+			{
+				var element = $('#conteudo');
+				var currentFontSize = parseInt(element.css('font-size'));
+
+				if (flag == 'increase')
+					currentFontSize += 3;
+				else if (flag == 'decrease')
+					currentFontSize -= 3;
+				else
+					currentFontSize = 30;
+
+				element.css('font-size', currentFontSize);
+			}
+		});
+	</script>
+</head>
+
+<body>
+
+	<!-- Menu Sticky -->
+	<div class="menu">
+		<a href="inicio.html"><img class="logo" src="imagens/logo.png" alt="Logo do estúdio AM-2. As letras A e M maiúsculas com um meteoro do lado e o número 2 dentro do meteoro." height="80px"></img></a>
+
+		<div class="lista">
+			<ul>
+				<li><a href="index.html">Início</a></li>
+				<li><a href="estudio.html">Estúdio</a></li>
+				<li><a href="time.html">Time</a></li>
+				<li><a href="portfolio.html">Portfólio</a></li>
+				<li><a href="contato.html">Contato</a></li>
+			</ul>
+		</div>
+
+		<!-- Botões de acessibilidade das fontes -->
+		<div class="acessibilidade">
+			<a id="fontMinus" href="#">A-</a>
+			<a id="fontPlus" href="#">A+</a>
+			<a id="fontDefault" href="#">Padrão</a>
+		</div>
+	</div>
+
+	<img src="Imagens/Bg_Main.jpg" class="background" alt="Imagem de fundo reproduzindo um céu estrelado">
+	<!-- Container que envolve tudo da página, também referência para a imagem de fundo -->
+	<section id="conteudo">
+
+
+		<h1><strong> Pode ficar à vontade, internauta! </strong></h1>
+
+		<form>
+			<h7 class="textForm"> Quer fazer um orçamento sem compromisso? Fala com a gente! </h7>
+			<p>
+				<input type="text" name="nome" placeholder="Nome" required="required">
+			</p>
+
+			<p>
+				<input type="email" name="e-mail" placeholder="E-mail" required="required">
+			</p>
+
+			<p>
+				<input type="text" name="telefone" placeholder="Telefone" required="required">
+			</p>
+
+			<p>
+				<textarea class="mensagem" name="mensagem" placeholder="Mensagem"></textarea>
+			</p>
+
+			<!-- Botão que quando clicado chama um alerta dizendo que sua mensagem foi enviada -->
+			<p>
+				<input class="enviar" type="submit" name="enviar" value="Enviar" onclick="enviada()">
+			</p>
+		</form>
+
+	</section>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* fontes personalizadas */
+@font-face {
+    src: url(fonts/moolbor.ttf);
+    font-family: MoolBoran;
+}
+
+@font-face {
+	src: url(fonts/Roboto-Regular.ttf);
+	font-family: Roboto;
+}
+
+body{
+	font-family: 'MoolBoran';
+	padding: 0;
+	margin: 0;
+	background-color: #262132;
+}
+
+/* tamanho de fonte padrão modificável pela acessibilidade */
+#content {
+	font-size: 35px;
+}
+
+/* menu fixo */
+.menu {
+	background-color: #231b30;
+	height: 120px;
+	z-index: +3;
+}
+
+.logo {
+	position: relative;
+	float: left;
+	padding: 20px 15px 0 35px;
+}
+
+.lista {
+	position: relative;
+	float: left;
+	padding-left: 15%;
+	padding-right: 10%;
+}
+
+ul{
+	display: flex;
+	flex-wrap: wrap;
+	background: #231b30;
+	font-size: 40px;
+}
+
+ul li{
+	list-style: none;
+}
+
+ul li a{
+	text-decoration: none;
+	padding: 10px 20px 0 20px;
+	color: #c9d6f9;
+	display: block;
+}
+
+.acessibilidade {
+	position: relative;
+	float: right;
+	padding-top: 50px;
+	padding-right: 30px;
+	font-size: 40px;
+}
+
+.acessibilidade a {
+	text-decoration: none;
+	padding-right: 10px;
+	color: #c9d6f9;
+}
+
+a:hover {
+	color: #da4c5a;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* Conteúdo principal */
+section {
+	text-align: center;
+}
+
+.box1 {
+	height: 630px;
+	background-color: #262132;
+}
+
+#fundo {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+}
+
+#banner {
+	position: relative;
+	padding-left: 15%;
+	padding-right: 15%;
+	z-index: +3;
+}
+
+.box2 {
+	padding-top: 100px;
+	background-color: #262132;
+	color: #c9d6f9;
+}
+
+.classBox2 {
+	padding-top: 220px;
+	background-color: #262132;
+	color: #c9d6f9;
+}
+
+.box3 {
+	padding-top: 50px;
+	margin-bottom: -50px;
+	background-color: #262132;
+}
+
+.vitrine {
+	display: flex;
+	padding: 0 30px 80px 30px;
+}
+
+h1 {
+	color: #da4c5a;
+}
+
+p {
+	padding: 0 30% 50px 30%;
+	font-family: 'Roboto';
+	line-height: 50px;
+}
+
+/* Animação Foguete */
+.rocket {
+	margin: 0 0 80px 30%;
+	width: 120px;
+	height: 80px;
+	position: relative;
+	animation-name: meuFoguete;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes meuFoguete {
+	0% {left: 45%}
+	100% {left: -15%}
+}
